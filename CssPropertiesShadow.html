@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      :root {
+        --primary: rebeccapurple;
+        --secondary: tomato;
+      }
+
+      h1 {
+        color: var(--secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <div id="shadow-host">slotted content</div>
+
+    <script>
+      const host = document.getElementById("shadow-host");
+
+      host.attachShadow({ mode: "open" });
+
+      host.shadowRoot.innerHTML = `
+        <style>
+            :host {
+                /* --secondary: mediumaquamarine; */
+            }
+            strong {
+                background: var(--primary, #121212);
+                color: var(--secondary, #fff);
+            }
+        </style>
+        <h2>Content inside the shadow root</h2>
+
+        <p><strong>This is shadow DOM content</strong> <slot></slot></p>
+    `;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Empty project</title>
+    <meta charset="utf-8" />
+    <style>
+      #launch-dialog {
+        background: tomato;
+        border-radius: 4px;
+        color: #fff;
+        font-family: Helvetica, Arial, sans-serif;
+        padding: 0.5rem 1rem;
+        position: static;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <some-component></some-component>
+
+    <one-dialog>
+      <span slot="heading">Hello world</span>
+      <div>
+        <p>
+          Lorem ipsum dolor amet tilde bicycle rights affogato brooklyn.
+          Whatever lomo subway tile sriracha gastropub edison bulb shabby chic
+          tumeric meditation mustache raw denim.
+        </p>
+
+        <p>
+          reegan ugh bespoke you probably haven't heard of them godard crucifix
+          pabst. Selvage biodiesel vice copper mug lumbersexual cred plaid.
+          Skateboard pitchfork listicle fashion axe. Chillwave viral butcher
+          vegan wolf.
+        </p>
+      </div>
+    </one-dialog>
+
+    <button id="launch-dialog">Launch dialog</button>
+
+    <script src="bundle.js"></script>
+    <script>
+      const button = document.getElementById("launch-dialog");
+      button.addEventListener("click", () => {
+        document.querySelector("one-dialog").open = true;
+      });
+    </script>
+  </body>
+</html>
