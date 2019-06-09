@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <template id="book-template">
+      <li><span class="title"></span> &mdash; <span class="author"></span></li>
+    </template>
+
+    <template id="book-template-2">
+      <li>
+        <span class="author"></span>'s classic novel <span class="title"></span>
+      </li>
+    </template>
+
+    <ul id="books"></ul>
+
+    <fieldset id="templates">
+      <legend>Choose template</legend>
+
+      <label>
+        <input type="radio" name="template" value="book-template" checked />
+        Template One
+      </label>
+      <label>
+        <input type="radio" name="template" value="book-template-2" /> Template
+        Two
+      </label>
+    </fieldset>
+
+    <script src="templates.js"></script>
+  </body>
+</html>

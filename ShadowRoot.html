@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="example">Slot content here</div>
+    <button id="button">Not tomato</button>
+
+    <script>
+      const shadowRoot = document
+        .getElementById("example")
+        .attachShadow({ mode: "open" });
+
+      shadowRoot.innerHTML = `<style>
+              button {
+                  background: tomato;
+                  color: white;
+              }
+              </style>
+              <button id="button"><slot></slot>tomato</button>`;
+    </script>
+  </body>
+</html>
